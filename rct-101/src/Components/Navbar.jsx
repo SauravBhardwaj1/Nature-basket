@@ -4,20 +4,25 @@ import {Stack,
     InputGroup, 
     IconButton,
     Button,
-    Select} from "@chakra-ui/react"
+    Select,
+    } from "@chakra-ui/react"
 import {SearchIcon,ChevronDownIcon} from "@chakra-ui/icons"
-
+import StoreLocater from "./TopNavbar"
+// import DesignArt from "./Logo"
 import InitialFocus from "./Pincode"
+import Login from "../Login/Login"
 
 function Navbar(){
     return (
         <>
-        
+        {/* <DesignArt /> */}
+        <StoreLocater />
         <Stack  spacing={50}>
         
         <InputGroup  ml={"400px"}>
-        {/* <InitialFocus /> */}
-        <Select width={"130px"} placeholder='Location'>
+        <InitialFocus />
+        <Select bg={"whitesmoke"} width={"110px"} placeholder='Location'>
+            
             <option value='option1'>Pune</option>
             <option value='option2'>Mumbai</option>
             <option value='option3'>Delhi NCR</option>
@@ -26,14 +31,14 @@ function Navbar(){
             <option value='option2'>Punjab</option>
             <option value='option3'>Himachal</option>
         </Select>
-                <Input  width={"600px"} variant="flushed" type='text' placeholder='Start shopping' />
+                <Input  width={"500px"} variant="flushed" type='text' placeholder='               Start shopping...' />
                 <IconButton
                 colorScheme='blue'
                 aria-label='Search database'
                 icon={<SearchIcon />}
                 />
             </InputGroup>
-            
+            <Login />
         </Stack>
         
           <ShopBy />
