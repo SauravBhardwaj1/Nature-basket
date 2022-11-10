@@ -20,7 +20,7 @@ function Login() {
   
     return (
       <>
-        <Button onClick={onOpen}>login/register</Button>
+        <Button bg={"none"} color={"red.600"} ml={"250px"} onClick={onOpen}>Login/register</Button>
 
         <Modal
           initialFocusRef={initialRef}

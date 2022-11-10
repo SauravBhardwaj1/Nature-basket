@@ -10,7 +10,6 @@ import {SearchIcon,ChevronDownIcon} from "@chakra-ui/icons"
 import StoreLocater from "./TopNavbar"
 // import DesignArt from "./Logo"
 import InitialFocus from "./Pincode"
-import Login from "../Login/Login"
 
 function Navbar(){
     return (
@@ -32,13 +31,15 @@ function Navbar(){
             <option value='option3'>Himachal</option>
         </Select>
                 <Input  width={"500px"} variant="flushed" type='text' placeholder='               Start shopping...' />
+                
                 <IconButton
                 colorScheme='blue'
                 aria-label='Search database'
                 icon={<SearchIcon />}
                 />
+                
             </InputGroup>
-            <Login />
+            
         </Stack>
         
           <ShopBy />
