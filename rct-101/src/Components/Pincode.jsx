@@ -22,7 +22,7 @@ function InitialFocus() {
   return (
     <>
       {/* <EditIcon /> */}
-      <Button  onClick={onOpen}>Pincode</Button>
+      <Button mt={-5} onClick={onOpen}>Pincode</Button>
 
       <Modal size={"2xl"}
         initialFocusRef={initialRef}
