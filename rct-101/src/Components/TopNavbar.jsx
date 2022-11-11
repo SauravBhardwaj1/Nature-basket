@@ -29,7 +29,7 @@ import {
             <MenuButton as={Button} 
             backgroundColor={"white"} 
             fontFamily={"sans-serif"}  
-            ml={5} width="200px" fontSize={"12px"}>Online Slots Availablity</MenuButton>   
+            ml={5} width="200px" mt={-16} fontSize={"12px"}>Online Slots Availablity</MenuButton>   
             
             <MenuList>   
             <Tabs>
@@ -58,10 +58,36 @@ import {
                     </Stack>
                     </TabPanel>
                     <TabPanel>
-                    <p>two!</p>
+                    <Stack spacing={5}>
+                        <p>9:00 am - 11:00 am</p>
+                        <Progress colorScheme='red' height='32px' value={100} />
+                        <p>11:00 am - 1:00 pm</p>
+                        <Progress colorScheme='red' height='32px' value={100} />
+                        <p>2:00 pm - 4:00 pm</p>
+                        <Progress colorScheme='red' height='32px' value={100} />
+                        <p>5:00 pm - 7:00 pm</p>
+                        <Progress colorScheme='green' height='32px' value={20} />
+                        <p>Same day delivery</p>
+                        <Progress colorScheme='green' height='32px' value={20} />
+                        <p>7:00 pm - 9:00 pm</p>
+                        <Progress colorScheme='green' height='32px' value={20} />
+                    </Stack>
                     </TabPanel>
                     <TabPanel>
-                    <p>three!</p>
+                    <Stack spacing={5}>
+                        <p>9:00 am - 11:00 am</p>
+                        <Progress colorScheme='red' height='32px' value={100} />
+                        <p>11:00 am - 1:00 pm</p>
+                        <Progress colorScheme='red' height='32px' value={100} />
+                        <p>2:00 pm - 4:00 pm</p>
+                        <Progress colorScheme='red' height='32px' value={100} />
+                        <p>5:00 pm - 7:00 pm</p>
+                        <Progress colorScheme='green' height='32px' value={20} />
+                        <p>Same day delivery</p>
+                        <Progress colorScheme='green' height='32px' value={20} />
+                        <p>7:00 pm - 9:00 pm</p>
+                        <Progress colorScheme='green' height='32px' value={20} />
+                    </Stack>
                     </TabPanel>
                 </TabPanels>
             </Tabs>
@@ -70,15 +96,15 @@ import {
           </Menu>
            
             <Menu >
-                <Stack mt={-4} display={"flex"} direction='row' h='50px' p={4}>
+                <Stack mt={-20} display={"flex"} direction='row' h='50px' p={4}>
                         <Divider orientation='vertical' />
                         <MenuButton as={Button} fontSize={"12px"} ml={8} width="100px" backgroundColor={"white"}>Fresh & Fast</MenuButton>
                     </Stack>
-                    <Stack mt={-4} display={"flex"} direction='row' h='50px' p={4}>
+                    <Stack mt={-20} display={"flex"} direction='row' h='50px' p={4}>
                         <Divider orientation='vertical' />
                         <MenuButton as={Button} fontSize={"12px"} ml={5} width="100px" backgroundColor={"white"}>Store Locater</MenuButton> 
                     </Stack>
-                    <Stack mt={-4} display={"flex"} direction='row' h='50px' p={4}>
+                    <Stack mt={-20} display={"flex"} direction='row' h='50px' p={4}>
                         <Divider orientation='vertical' />
                         <MenuButton as={Button} fontSize={"12px"} ml={5} width="100px" backgroundColor={"white"}>Contact Us</MenuButton>
                     </Stack>
