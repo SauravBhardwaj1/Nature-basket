@@ -1,3 +1,5 @@
-.trending{
-    border: 1px solid wheat;    
-}  
+.navbar{
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}

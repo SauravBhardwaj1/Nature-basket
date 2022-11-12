@@ -6,7 +6,7 @@ import Cards from "./MidSection/Cards"
 import Products from './Products/Products';
 import Discover from './Products/Discover';
 import ShopCards from './MidSection/ShopCards';
-
+import Footer from './Footer/Footer';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Products />
       <Discover />
       <Cards />
-
+      <Footer />
     </div>
   );
 }
