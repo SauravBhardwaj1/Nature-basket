@@ -1,0 +1,93 @@
+      #footer {
+        display: block;
+        margin-top: 30px;
+        background-color: aliceblue;
+      }
+      #footercontainer {
+        display: flex;
+        text-align: left;
+      }
+      #row {
+        display: flex;
+      }
+      #footernav {
+        display: flex;
+        padding-left: 3rem;
+        margin-top: 0px;
+        padding-top: 10px;
+        /* text-align: left; */
+      }
+      #col-5-1 {
+        display: flex;
+        /* margin-left: 20px; */
+        padding-top: 1rem;
+        width: 45.8%;
+        /* text-align: left; */
+      }
+      #downloadapp {
+        display: block;
+        margin-top: 20px;
+        margin-left: 50px;
+        text-align: justify;
+      }
+      #sub {
+        display: flex;
+        flex-direction: column;
+        padding-left: 8rem;
+        text-decoration: none;
+        text-align: justify;
+        gap: 20px;
+        padding-top: 6rem;
+        width: 30%;
+        text-align: center;
+        font-size: 30px;
+      }
+      .col-4 {
+        display: block;
+        /* float: left; */
+        padding-left: 4rem;
+        /* padding-right: 5rem; */
+      }
+      input[type="text"] {
+        outline: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      #footernav li a {
+        color: rgb(133, 133, 133);
+        display: block;
+        font-size: 15x;
+        text-decoration: none;
+        white-space: nowrap;
+        text-justify: auto;
+      }
+      #footernav li {
+        display: block;
+        font-size: 16px;
+        /* text-decoration: none; */
+        text-align: right;
+      }
+      #holder {
+        text-align: center;
+        font-size: 70%;
+        height: 50px;
+        border-radius: 20px;
+        border-color: rgb(169, 155, 155);
+      }
+      #btn {
+        height: 40px;
+        width: 50%;
+        border-radius: 5px;
+        background-color: rgb(68, 197, 56);
+        margin: auto;
+        margin-top: 0%;
+        cursor: pointer;
+        border: none;
+        padding: 1px;
+      }
+      
+    #span{
+        font-size: 20px;
+        margin-top: -20px;
+    }

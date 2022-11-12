@@ -36,7 +36,7 @@ function Cards(){
                 <Image ml={5} src="https://d1z88p83zuviay.cloudfront.net/Images/real-thai.jpg" />
                 <Image ml={5} src="https://d1z88p83zuviay.cloudfront.net/Images/barilla.jpg" />
             </div>
-            <HStack mt={10} display={"block"}>
+            <HStack ml={3} mt={10} display={"block"}>
                 <Heading as={"h1"}>Online Grocery Store India</Heading>
                 <Text>Nature’s Basket is a grocery store operating in Mumbai, Bangalore and Pune with
                      deliveries to all cities across India including Hyderabad, Delhi, Kolkata, Chennai,

@@ -14,7 +14,7 @@ import {
     Progress,
   } from "@chakra-ui/react";
   import React from "react";
-  import Login from "../Login/Login"
+  import Register from "../Login/Register"
   
   // import InitialFocus from "./Pincode"
 
@@ -109,12 +109,8 @@ import {
                         <MenuButton as={Button} fontSize={"12px"} ml={5} width="100px" backgroundColor={"white"}>Contact Us</MenuButton>
                     </Stack>
             </Menu>
-            <Login />
-          </div>
-          
-          
-           
-          
+            <Register />
+          </div>   
           
       </>
     );

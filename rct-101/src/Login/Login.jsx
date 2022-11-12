@@ -1,55 +1,71 @@
-import {Modal,
-    ModalContent,
-    ModalOverlay,
-    ModalCloseButton,
-    ModalHeader,
-    FormControl,
-    FormLabel,
-    ModalBody,
-    ModalFooter,
-    useDisclosure,
-  Button,
+import {Button,Drawer, 
+    DrawerOverlay, 
+    DrawerContent, 
+    DrawerCloseButton, 
+    DrawerBody,
+    DrawerFooter,DrawerHeader,
+  useDisclosure,
+  Link,
   Input} from "@chakra-ui/react"
-import React from "react"
-
-function Login() {
+  import React,{useState} from "react" 
+  import Entry from "./Entry"
+  
+  function Login() {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const btnRef = React.useRef()
   
-    const initialRef = React.useRef(null)
-    const finalRef = React.useRef(null)
-  
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+    const [allEntry, setAllEntry] = useState([]);
+    
+    const submitForm=(e)=>{
+        e.preventDefault()
+        
+        const newEntry={email:email, password:password}
+        setAllEntry([...allEntry,newEntry])
+
+        console.log(setAllEntry)
+    }
+    
     return (
       <>
-        <Button bg={"none"} mt={-20} color={"red.600"} ml={"250px"} onClick={onOpen}>Login/register</Button>
-
-        <Modal
-          initialFocusRef={initialRef}
-          finalFocusRef={finalRef}
+        <Button ref={btnRef} bg={"none"} ml={250} mt={-20} color={"red.600"} onClick={onOpen}>
+            Login
+        </Button>
+        <Drawer
           isOpen={isOpen}
+          placement='right'
           onClose={onClose}
+          finalFocusRef={btnRef}
         >
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>ENTER YOUR 10 DIGIT MOBILE NUMBER</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody pb={6}>
-              <FormControl>
-                <FormLabel>First name</FormLabel>
-                <Input ref={initialRef} placeholder='Enter mobile number' />
-                <p>By continuing, you agree to our Refund, Terms and Policies</p>
-              </FormControl>
-            </ModalBody>
-  
-            <ModalFooter>
-              <Button colorScheme='blue' mr={3}>
-                Proceed
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerCloseButton />
+                <DrawerHeader>Login here</DrawerHeader>
+                <DrawerBody>
+                <Input onChange={(e)=>setEmail(e.target.value)} placeholder='Enter email' type={"text"} />
+                </DrawerBody>
+                <DrawerBody mt={"-450px"}>
+                <Input onChange={(e)=>setPassword(e.target.value)} placeholder='Enter Password' type={"password"} />
+                </DrawerBody> 
+            <DrawerFooter>
+              <Button variant='outline' mr={3} onClick={onClose}>
+                Cancel
               </Button>
-              <Button onClick={onClose}>Cancel</Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
+            <Link href="./">
+              <Button onSubmit={submitForm} colorScheme='blue'>Save</Button>
+              
+            </Link>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+        <div>
+            {allEntry.map((el)=>{
+                <Entry email={el.email}/>
+            })}
+        </div>
       </>
     )
   }
-
+  
   export default Login;
