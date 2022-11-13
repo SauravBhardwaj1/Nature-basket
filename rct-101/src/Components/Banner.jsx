@@ -13,6 +13,7 @@ function Banner(){
     
     return(
         <>  
+        <div style={{width:"100%"}}>
             <Box  height={{base: '100%',  md: '50%',xl: '25%'}} mt={"10px"} border={"none"} borderWidth='1px' borderRadius='lg' >
                 <Image src={image.imageUrl} m={"auto"} overflow='hidden' borderRadius='lg' width={"100vw"} height={"400px"} alt={image.imageAlt} />
             </Box>
@@ -32,6 +33,7 @@ function Banner(){
                     </Box>
                 </Stack>     
             </div>  
+        </div>
         </>
     )
 }

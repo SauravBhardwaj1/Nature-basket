@@ -23,9 +23,6 @@ function Register() {
   
     return (
       <>
-        <Login />
-        <Button bg={"none"} mt={-20} color={"red.600"} onClick={onOpen}>Register</Button>
-
         <Modal
           initialFocusRef={initialRef}
           finalFocusRef={finalRef}

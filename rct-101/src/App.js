@@ -1,23 +1,19 @@
 // import logo from './logo.svg';
 import './App.css';
+import {Routes,Route} from "react-router-dom"
 import Navbar from "./Components/Navbar"
-import Banner from "./Components/Banner"
-import Cards from "./MidSection/Cards"
-import Products from './Products/Products';
-import Discover from './Products/Discover';
-import ShopCards from './MidSection/ShopCards';
-import Footer from './Footer/Footer';
-
+import Home from './Components/Home/Home';
+import Login from './Login/Login';
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Banner />   
-      <ShopCards />
-      <Products />
-      <Discover />
-      <Cards />
-      <Footer />
+      <Routes>
+        <Route path ="/" element={<Home />} />
+        <Route path="/Login" element={<Login />} />
+
+      </Routes>
+     
     </div>
   );
 }

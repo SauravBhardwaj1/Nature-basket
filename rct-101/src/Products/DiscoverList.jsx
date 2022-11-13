@@ -17,7 +17,7 @@ const Product=({title,imageSrc,qty,mrp})=>{
                 <p>{qty}</p>
                 <div style={{display:"flex"}}>
                     <Button ml={2} w={10}>{mrp}</Button>
-                    <Button ml={5} w={"48px"} bg={"green"}>
+                    <Button  ml={5} w={"48px"} bg={"green"}>
                         ADD
                         </Button>
                 </div>

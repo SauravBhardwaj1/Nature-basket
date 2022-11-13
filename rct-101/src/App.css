@@ -2,4 +2,17 @@
     position: sticky;
     top: 0px;
     background-color: white;
+    z-index: auto;
+}
+
+.login-page{
+    width:50%;
+    height:380px; 
+    background-color: azure ;
+    margin:auto;
+    margin:40px 0px 50px 400px;
+    gap:50px;
+    border:1px solid whitesmoke;
+    box-shadow:rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;;
+    border-radius: 10px;
 }

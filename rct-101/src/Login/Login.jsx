@@ -1,71 +1,96 @@
-import {Button,Drawer, 
-    DrawerOverlay, 
-    DrawerContent, 
-    DrawerCloseButton, 
-    DrawerBody,
-    DrawerFooter,DrawerHeader,
-  useDisclosure,
-  Link,
-  Input} from "@chakra-ui/react"
-  import React,{useState} from "react" 
-  import Entry from "./Entry"
-  
-  function Login() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef()
-  
-    const [email,setEmail] = useState("")
-    const [password,setPassword] = useState("")
-    const [allEntry, setAllEntry] = useState([]);
-    
-    const submitForm=(e)=>{
-        e.preventDefault()
-        
-        const newEntry={email:email, password:password}
-        setAllEntry([...allEntry,newEntry])
 
-        console.log(setAllEntry)
-    }
-    
-    return (
-      <>
-        <Button ref={btnRef} bg={"none"} ml={250} mt={-20} color={"red.600"} onClick={onOpen}>
-            Login
-        </Button>
-        <Drawer
-          isOpen={isOpen}
-          placement='right'
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-                <DrawerHeader>Login here</DrawerHeader>
-                <DrawerBody>
-                <Input onChange={(e)=>setEmail(e.target.value)} placeholder='Enter email' type={"text"} />
-                </DrawerBody>
-                <DrawerBody mt={"-450px"}>
-                <Input onChange={(e)=>setPassword(e.target.value)} placeholder='Enter Password' type={"password"} />
-                </DrawerBody> 
-            <DrawerFooter>
-              <Button variant='outline' mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-            <Link href="./">
-              <Button onSubmit={submitForm} colorScheme='blue'>Save</Button>
-              
-            </Link>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-        <div>
-            {allEntry.map((el)=>{
-                <Entry email={el.email}/>
-            })}
-        </div>
-      </>
-    )
-  }
+// import { useContext } from "react"; 
+import { useState } from "react"; 
+import { Link, useNavigate} from "react-router-dom"; 
+import { Text , Heading,Button} from "@chakra-ui/react";
+ 
+const  Login=()=> { 
+  const [email, setEmail] = useState(""); 
+  const[name,setName]=useState("") 
+  const[last,setLast]=useState("") 
+  const[number,setNumber]=useState("") 
+  const [loading, setLoading] = useState(false); 
   
-  export default Login;
+  const navigate = useNavigate(); 
+  const handleSubmit = (e) => { 
+    e.preventDefault(); 
+    setLoading(true); 
+    console.log(name); 
+    if(name!=="" || email!=="" || last!=="" || number!==""){ 
+      alert("Login Successfull") 
+      window.location.href="./"
+    }else{ 
+      alert('Please fill details'); 
+    } 
+  }; 
+  return ( 
+    <div className="login-page"> 
+      <form onSubmit={handleSubmit} className="form" data-testid="login-form" style={{gap:"50px"}}> 
+        
+        <div style={{width:"90%",margin:"auto"}}>  
+        <div> 
+            <Heading mt={"10px"} as="h3">Create New Account</Heading> 
+            <label> 
+            <Text mt={"10px"} mr={"20px"}>First Name</Text> 
+              <input 
+                value={name} 
+                onChange={(e) => setName(e.target.value)} 
+                
+                type="text" 
+                placeholder="Name" style={{width:"580px",height:"30px"}} 
+              /> 
+            </label> 
+          </div> 
+        <div> 
+          <label> 
+          <h5 style={{marginRight:"70%"}}>Last Name</h5> 
+ 
+            <input 
+              value={last} 
+              onChange={(e) => setLast(e.target.value)} 
+              
+              type="text" 
+              placeholder="Last  name" style={{width:"580px",height:"30px"}} 
+            /> 
+          </label> 
+        </div> 
+        <div> 
+          <label> 
+          <h5 style={{marginRight:"70%"}}>Email Address</h5>                 
+               <input 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+             
+              type="email" 
+              placeholder="email" style={{width:"580px",height:"30px"}} 
+            /> 
+          </label> 
+        </div> 
+        
+        <div> 
+          <label> 
+          <h5 style={{marginRight:"70%"}}> Phone Number</h5> 
+ 
+            <input 
+              value={number} 
+              onChange={(e) => setNumber(e.target.value)} 
+              
+              type="number" 
+              placeholder="Phone Number" style={{width:"580px",height:"30px"}} 
+            /> 
+            <p style={{marginTop:"10px",color:"grey"}}>Your mobile number will be used to avail benefits such as Nature Basket Cashback and points</p> 
+          </label> 
+        </div> 
+          </div>      
+        <div> 
+          <Button ml={"300px"} disabled={loading} data-testid="form-submit" type="submit"> 
+            SUBMIT 
+          </Button> 
+          <Text mb={"10px"} ml={"20px"}>All ready have an Account?<Link href="./Login">LOGIN</Link></Text> 
+        </div> 
+      </form> 
+       
+    </div> 
+  ); 
+} 
+export default Login;
