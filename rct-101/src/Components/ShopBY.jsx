@@ -4,7 +4,8 @@ import {
     MenuItem,
     MenuList,
     Button,
-    Link
+    Link,
+    Box
   } from "@chakra-ui/react";
   // import InitialFocus from "./Pincode"
 
@@ -13,9 +14,10 @@ import {
   function Pop() {
     return (
       <>
+      <Box position={"sticky"} top={"165px"} bg={"white"} zIndex={"0px"} >
         <Menu fontFamily={"sans-serif"} >   
         
-            <MenuButton as={Button}  mt={"10px"} fontFamily={"sans-serif"} ml={5} color="red.700" size="lg" width="200px">SHOP BY CATEGORY</MenuButton> <TriangleDownIcon /> 
+            <MenuButton as={Button} mt={"10px"} fontFamily={"sans-serif"} ml={5} color="red.700" size="lg" width="200px">SHOP BY CATEGORY</MenuButton> <TriangleDownIcon /> 
             
             <MenuList rightIcon={<ChevronDownIcon />}>
           
@@ -63,6 +65,7 @@ import {
           <Link href='./'> 
           <Button ml={3} mt={"10px"} width="170px" backgroundColor={"white"}>BOOK STORE VISIT</Button> <SmallAddIcon />
           </Link>
+        </Box>
       </>
     );
   }

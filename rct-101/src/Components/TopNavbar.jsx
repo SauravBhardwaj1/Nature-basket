@@ -11,11 +11,11 @@ import {
     Tab,
     TabPanel,
     TabPanels,
-    Progress,
+    Progress
   } from "@chakra-ui/react";
   import React from "react";
   import Register from "../Login/Register"
-  
+  import { NavLink } from "react-router-dom"
   // import InitialFocus from "./Pincode"
 
   
@@ -110,6 +110,8 @@ import {
                     </Stack>
             </Menu>
             <Register />
+            <NavLink to="./Login"> <Button ml={"250px"} w={"80px"} fontSize={18} bg={"whitesmoke"} mt={-20} color={"red.600"} > Login</Button> 
+                </NavLink>
           </div>   
           
       </>
